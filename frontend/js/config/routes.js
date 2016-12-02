@@ -14,6 +14,6 @@
       .state('home', {
         url: '/',
         templateUrl: 'js/templates/home.html'
-      })
+      });
   }
 }());
