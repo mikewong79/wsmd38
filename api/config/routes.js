@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 // API Routes, respond with JSON only
 router.route('/api/books')
-  .get(booksController.index);
-
+  .get(booksController.index)
+  .post(booksController.create);
 
 module.exports = router;
