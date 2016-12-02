@@ -2,7 +2,8 @@ var Book = require('../models/Book');
 
 module.exports = {
   index: index,
-  create: create
+  create: create,
+  update: update
 }
 
 function index(req, res, next) {
@@ -20,5 +21,24 @@ function create(req, res, next) {
     if(err) next(err);
 
     res.json(savedBook);
+  });
+}
+
+
+function update(req, res, next) {
+  var id = req.params.id;
+
+  Book.findById(id, function(err, book) {
+    if(err) next(err);
+
+    book.title = req.body.title;
+    book.author = req.body.author;
+    book.genre = req.body.genre;
+
+    book.save(function(err, updatedBook) {
+      if(err) next(err);
+
+      res.json(updatedBook);
+    });
   });
 }

@@ -13,4 +13,7 @@ router.route('/api/books')
   .get(booksController.index)
   .post(booksController.create);
 
+router.route('/api/books/:id')
+  .patch(booksController.update);
+
 module.exports = router;
