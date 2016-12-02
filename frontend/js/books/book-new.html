@@ -1,0 +1,18 @@
+<h3>Add A Book For Mike to Read (He needs more culture)</h3>
+<form ng-submit="bookNewVm.addBook()">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" ng-model="bookNewVm.newBook.title">
+  </div>
+  <div>
+    <label for="author">Author:</label>
+    <input type="text" id="author" ng-model="bookNewVm.newBook.author">
+  </div>
+  <div>
+    <label for="genre">Genre:</label>
+    <input type="text" id="genre" ng-model="bookNewVm.newBook.genre">
+  </div>
+  <div>
+    <input type="submit" value="Add Book">    
+  </div>
+</form>

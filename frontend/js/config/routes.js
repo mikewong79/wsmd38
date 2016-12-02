@@ -20,6 +20,12 @@
         templateUrl: 'js/books/book-list.html',
         controller: 'BookListController',
         controllerAs: 'bookListVm'
+      })
+      .state('booksNew', {
+        url: '/books/new',
+        templateUrl: 'js/books/book-new.html',
+        controller: 'BookNewController',
+        controllerAs: 'bookNewVm'
       });
   }
 }());
