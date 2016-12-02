@@ -8,6 +8,6 @@ function index(req, res, next) {
   Book.find({}, function(err, books) {
     if(err) next(err);
 
-    res.json({books: books})
+    res.json(books)
   }).select('-__v');
 }

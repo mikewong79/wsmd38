@@ -14,6 +14,12 @@
       .state('home', {
         url: '/',
         templateUrl: 'js/templates/home.html'
+      })
+      .state('booksList', {
+        url: '/books/list',
+        templateUrl: 'js/books/book-list.html',
+        controller: 'BookListController',
+        controllerAs: 'bookListVm'
       });
   }
 }());
