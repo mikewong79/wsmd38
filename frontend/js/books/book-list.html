@@ -3,5 +3,6 @@
     {{book.title}}
     <a ui-sref="booksShow({id: book._id})">More Info</a>
     <a ui-sref="booksEdit({id: book._id})">Edit</a>
+    <a href="" ng-click="bookListVm.deleteBook(book)">Delete Me</a>
   </li>
 </ul>

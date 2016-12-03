@@ -14,10 +14,22 @@
   function BookListController(BookResource) {
     var vm = this;
     vm.books = [];
+    vm.deleteBook = deleteBook;
 
     BookResource.query().$promise.then(function(data) {
       vm.books = data;
     });
+
+    function deleteBook(bookToDelete) {
+      BookResource.delete({id:bookToDelete._id}).$promise.then(function(response) {
+        if(response.message) {
+          console.log(response.message);
+          vm.books = vm.books.filter(function(book) {
+            return book != bookToDelete;
+          });
+        }
+      });
+    }
   }
 
   function BookNewController(BookResource, $state) {
