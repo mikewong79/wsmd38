@@ -15,6 +15,7 @@ router.route('/api/books')
 
 router.route('/api/books/:id')
   .get(booksController.show)
-  .patch(booksController.update);
+  .patch(booksController.update)
+  .delete(booksController.destroy);
 
 module.exports = router;

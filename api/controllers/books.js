@@ -4,7 +4,8 @@ module.exports = {
   index: index,
   create: create,
   show: show,
-  update: update
+  update: update,
+  destroy: destroy
 }
 
 function index(req, res, next) {
@@ -51,5 +52,15 @@ function update(req, res, next) {
 
       res.json(updatedBook);
     });
+  });
+}
+
+function destroy(req, res, next) {
+  var id = req.params.id;
+
+  Book.remove({_id: id}, function(err) {
+    if(err) next(err);
+
+    res.json({message: 'Book successfully deleted.  It sucked anyways.'});
   });
 }
