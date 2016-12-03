@@ -26,6 +26,12 @@
         templateUrl: 'js/books/book-new.html',
         controller: 'BookNewController',
         controllerAs: 'bookNewVm'
+      })
+      .state('booksEdit', {
+        url: '/books/edit/:id',
+        templateUrl: 'js/books/book-edit.html',
+        controller: 'BookEditController',
+        controllerAs: 'bookEditVm'
       });
   }
 }());

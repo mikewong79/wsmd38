@@ -1,5 +1,6 @@
 <ul>
   <li ng-repeat="book in bookListVm.books">
     {{book.title}} by {{book.author}} about {{book.genre}}
+    <a ui-sref="booksEdit({id: book._id})">Edit</a>
   </li>
 </ul>

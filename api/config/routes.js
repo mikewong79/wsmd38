@@ -14,6 +14,7 @@ router.route('/api/books')
   .post(booksController.create);
 
 router.route('/api/books/:id')
+  .get(booksController.show)
   .patch(booksController.update);
 
 module.exports = router;

@@ -3,6 +3,7 @@ var Book = require('../models/Book');
 module.exports = {
   index: index,
   create: create,
+  show: show,
   update: update
 }
 
@@ -22,6 +23,16 @@ function create(req, res, next) {
 
     res.json(savedBook);
   });
+}
+
+function show(req, res, next) {
+  var id = req.params.id;
+
+  Book.findById(id, function(err, book) {
+    if(err) next(err);
+
+    res.json(book);
+  })
 }
 
 
