@@ -3,10 +3,12 @@
   angular.module('wsmd38')
     .controller('BookListController', BookListController)
     .controller('BookNewController', BookNewController)
+    .controller('BookShowController', BookShowController)
     .controller('BookEditController', BookEditController);
 
   BookListController.$inject = ['BookResource'];
   BookNewController.$inject = ['BookResource', '$state'];
+  BookShowController.$inject = ['BookResource', '$stateParams'];
   BookEditController.$inject = ['BookResource', '$state', '$stateParams'];
 
   function BookListController(BookResource) {
@@ -29,6 +31,15 @@
         $state.go('booksList')
       });
     }
+  }
+
+  function BookShowController(BookResource, $stateParams) {
+    var vm = this;
+    vm.book = {};
+
+    BookResource.get({id: $stateParams.id}).$promise.then(function(jsonBook) {
+      vm.book = jsonBook;
+    });
   }
 
   function BookEditController(BookResource, $state, $stateParams) {

@@ -27,6 +27,12 @@
         controller: 'BookNewController',
         controllerAs: 'bookNewVm'
       })
+      .state('booksShow', {
+        url: '/books/show/:id',
+        templateUrl: 'js/books/book-show.html',
+        controller: 'BookShowController',
+        controllerAs: 'bookShowVm'
+      })
       .state('booksEdit', {
         url: '/books/edit/:id',
         templateUrl: 'js/books/book-edit.html',

@@ -1,6 +1,7 @@
 <ul>
   <li ng-repeat="book in bookListVm.books">
-    {{book.title}} by {{book.author}} about {{book.genre}}
+    {{book.title}}
+    <a ui-sref="booksShow({id: book._id})">More Info</a>
     <a ui-sref="booksEdit({id: book._id})">Edit</a>
   </li>
 </ul>
